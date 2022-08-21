@@ -11,11 +11,11 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: `${process.env.REACT_APP_SERVER_URL}/:path*`,
+				destination: `https://magic-tv-back.herokuapp.com/:path*`,
 			},
 			{
 				source: '/uploads/:path*',
-				destination: `${process.env.REACT_APP_SERVER_URL}/uploads/:path*`,
+				destination: `https://magic-tv-back.herokuapp.com/uploads/:path*`,
 			},
 		]
 	},
