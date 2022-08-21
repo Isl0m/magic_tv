@@ -1,0 +1,23 @@
+.content {
+	@apply relative z-2 p-8;
+
+	> h1 {
+		@apply text-white uppercase text-5xl font-semibold mb-1 text-shadow;
+	}
+
+	.rating {
+		background-color: rgba(255, 255, 255, 0.2);
+		@apply absolute bottom-8 right-8 flex items-center text-xl opacity-90 p-1 rounded-md backdrop-blur-md;
+		> svg {
+			@apply fill-yellow-700 mb-0.5;
+		}
+
+		> span {
+			@apply text-white ml-2 xl:ml-0;
+		}
+	}
+
+	.details {
+		@apply text-white text-opacity-80 my-3;
+	}
+}
