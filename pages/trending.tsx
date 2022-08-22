@@ -20,17 +20,23 @@ const TrendingPage: NextPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const queryClient = new QueryClient()
+	try {
+		const queryClient = new QueryClient()
 
-	await queryClient.prefetchQuery(['Popular', 'movies'], () =>
-		MovieService.getMostPopularMovies()
-	)
+		await queryClient.prefetchQuery(['Popular', 'movies'], () =>
+			MovieService.getMostPopularMovies()
+		)
 
-	return {
-		props: {
-			dehydratedState: dehydrate(queryClient),
-		},
-		revalidate: 60,
+		return {
+			props: {
+				dehydratedState: dehydrate(queryClient),
+			},
+			revalidate: 60,
+		}
+	} catch (e) {
+		return {
+			notFound: true,
+		}
 	}
 }
 

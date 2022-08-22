@@ -16,7 +16,7 @@ const FreshPage: NextPage<{ movies: IMovie[] }> = ({ movies }) => {
 	)
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async () => {
 	try {
 		const { data: movies } = await MovieService.getAll()
 

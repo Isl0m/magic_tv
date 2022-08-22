@@ -4,15 +4,15 @@ import { FC } from 'react'
 
 import FavoriteButton from '../movie/FavoriteButton/FavoriteButton'
 
-import styles from './Favorites.module.scss'
+import s from './Favorites.module.scss'
 import { IFavoriteItem } from './favorites.interface'
 
 const FavoriteItem: FC<{ item: IFavoriteItem }> = ({ item }) => {
 	return (
-		<div className={styles.itemWrapper}>
+		<div className={s.itemWrapper}>
 			<FavoriteButton movieId={item._id} />
 			<Link href={item.url}>
-				<a className={styles.item}>
+				<a className={s.item}>
 					<Image
 						alt={item.name}
 						src={item.posterPath}
@@ -21,7 +21,7 @@ const FavoriteItem: FC<{ item: IFavoriteItem }> = ({ item }) => {
 						priority
 					/>
 
-					<div className={styles.title}>{item.title}</div>
+					<div className={s.title}>{item.title}</div>
 				</a>
 			</Link>
 		</div>

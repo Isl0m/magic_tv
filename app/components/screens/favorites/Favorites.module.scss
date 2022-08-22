@@ -21,11 +21,21 @@
 .itemWrapper {
 	@apply relative mb-8 h-44 mr-8 animate-fade transition-transform hover:-translate-y-3;
 	width: 31%;
+	@media (min-width: 1280px) {
+		width: 45%;
+	}
 
 	&:nth-child(3n) {
 		@apply mr-0;
 	}
-
+	@media (min-width: 1280px) {
+		&:nth-child(3n) {
+			@apply mr-8;
+		}
+		&:nth-child(2n) {
+			@apply mr-0;
+		}
+	}
 	.item {
 		@apply relative z-1 w-full h-full flex items-end shadow-lg rounded-layout overflow-hidden;
 

@@ -11,7 +11,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: `https://magic-tv-back.herokuapp.com:path*`,
+				destination: `https://magic-tv-back.herokuapp.com/:path*`,
 			},
 			{
 				source: '/uploads/:path*',

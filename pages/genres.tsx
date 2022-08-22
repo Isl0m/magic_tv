@@ -8,7 +8,7 @@ import { GenreService } from '@/services/genre.service'
 const GenresPage: NextPage<{ collections: ICollection[] }> = ({
 	collections,
 }) => {
-	return <Collections collections={collections || []} />
+	return <Collections collections={collections} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -23,8 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		// console.log(errorCatch(e))
 
 		return {
-			props: {},
-			// notFound: true,
+			notFound: true,
 		}
 	}
 }

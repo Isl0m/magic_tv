@@ -49,14 +49,11 @@ export const getStaticProps: GetStaticProps = async () => {
 				posterPath: m.poster,
 				url: getMovieUrl(m.slug),
 			}))
-
 		return {
 			props: { slides, trendingMovies, actors } as IHome,
 			revalidate: 60,
 		}
 	} catch (error) {
-		console.log(errorCatch(error))
-
 		return {
 			props: {
 				slides: [],
