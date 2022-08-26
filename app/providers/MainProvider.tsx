@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 
 import Layout from '@/components/layout/Layout'
 
+import NotSupport from '@/ui/not-support/NotSupport'
+
 import { TypeComponentAuthFields } from '@/shared/types/auth.types'
 
 import { store } from '@/store/store'
@@ -21,7 +23,10 @@ const queryClient = new QueryClient({
 })
 
 const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
-	return (
+	const isSupportedWidth =
+		typeof window !== 'undefined' ? window.innerWidth > 1280 : true
+
+	return isSupportedWidth ? (
 		<HeadProvider>
 			<Provider store={store}>
 				<QueryClientProvider client={queryClient}>
@@ -32,6 +37,8 @@ const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
 				</QueryClientProvider>
 			</Provider>
 		</HeadProvider>
+	) : (
+		<NotSupport />
 	)
 }
 

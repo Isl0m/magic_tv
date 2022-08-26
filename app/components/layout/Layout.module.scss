@@ -24,7 +24,7 @@ $bar-width: 20%;
 	}
 
 	.center {
-		@apply min-h-screen p-layout;
+		@apply min-h-screen p-layout lg:p-6;
 		margin: 0 $bar-width;
 	}
 }
